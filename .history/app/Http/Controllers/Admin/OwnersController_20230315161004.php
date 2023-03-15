@@ -22,7 +22,8 @@ class OwnersController extends Controller
     {
         $date_now = Carbon::now();
         $date_parse = Carbon::parse(now());
-        // echo $date_now->year;
+        echo $date_now;
+        PHP_
         echo $date_parse;
 
         $e_all = Owner::all();

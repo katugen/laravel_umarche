@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Owner; //Eloquent
 use Illuminate\Support\Facades\DB; //クエリビルダ
-use Carbon\Carbon;
 
 class OwnersController extends Controller
 {
@@ -20,11 +19,6 @@ class OwnersController extends Controller
     }
     public function index()
     {
-        $date_now = Carbon::now();
-        $date_parse = Carbon::parse(now());
-        // echo $date_now->year;
-        echo $date_parse;
-
         $e_all = Owner::all();
         $q_get = DB::table('owners')->select('name')->get();
         $q_first = DB::table('owners')->select('name')->first();
@@ -32,8 +26,7 @@ class OwnersController extends Controller
         $c_test = collect([
             'name' => 'テスト'
         ]);
-
-        dd($e_all, $q_get, $q_first, $c_test);
+        dd);
     }
 
     /**
