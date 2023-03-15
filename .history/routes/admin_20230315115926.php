@@ -30,7 +30,7 @@ Route::get('/', function () {
 });
 
 Route::resource('owners', OwnersController::class)
-    ->middleware('auth:admin');
+->middleware(['auth:admin', 'verified'])
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
