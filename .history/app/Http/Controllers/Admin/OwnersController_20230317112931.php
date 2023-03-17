@@ -106,8 +106,6 @@ class OwnersController extends Controller
         $owner->save();
 
         return redirect()
-            ->route('admin.owners.index')
-            ->with('message', 'オーナー情報を更新しました。');
     }
 
     /**
