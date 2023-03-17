@@ -64,16 +64,11 @@ class OwnersController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        Owner::create([
+        ::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
-
-        return redirect()
-            ->route('admin.owners.index')
-            ->with('message', 'オーナー登録を実施しました。');
     }
 
     /**

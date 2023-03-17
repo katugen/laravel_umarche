@@ -72,8 +72,8 @@ class OwnersController extends Controller
 
 
         return redirect()
-            ->route('admin.owners.index')
-            ->with('message', 'オーナー登録を実施しました。');
+        ->route('admin.owners.index')
+        ->with('message');
     }
 
     /**

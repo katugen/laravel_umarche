@@ -16,7 +16,7 @@
                             </div>
 
                             <div class="lg:w-1/2 md:w-2/3 mx-auto">
-                                <form method="post" action="{{ route('admin.owners.store') }}">
+                                <form action="post" action="{{ 'admin.owners.store' }}">
                                     @csrf
                                     <div class="-m-2">
                                         <div class="p-2 w-1/2 mx-auto">
@@ -26,7 +26,7 @@
                                                 <input type="text" id="name" name="name"
                                                     value="{{ old('name') }}" required
                                                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                                                    <x-input-error :messages="$errors->get('name')" class="mt-2" />
                                             </div>
                                         </div>
                                         <div class="p-2 w-1/2 mx-auto">
@@ -36,8 +36,6 @@
                                                 <input type="email" id="email" name="email"
                                                     value="{{ old('email') }}" required
                                                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                                <x-input-error :messages="$errors->get('email')" class="mt-2" />
-
                                             </div>
                                         </div>
                                         <div class="p-2 w-1/2 mx-auto">
@@ -46,7 +44,6 @@
                                                     class="leading-7 text-sm text-gray-600">パスワード</label>
                                                 <input type="password" id="password" name="password" required
                                                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                                <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                             </div>
                                         </div>
                                         <div class="p-2 w-1/2 mx-auto">
@@ -56,7 +53,6 @@
                                                 <input type="password" id="password_confirmation"
                                                     name="password_confirmation" required
                                                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                                             </div>
                                         </div>
                                     </div>
