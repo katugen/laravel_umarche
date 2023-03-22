@@ -30,7 +30,7 @@ use App\Http\Controllers\Admin\OwnersController;
 // });
 
 Route::resource('owners', OwnersController::class)
-    ->middleware('auth:admin')->except(['show']);
+    ->middleware('auth:admin')->ex;
 
 Route::prefix('expired-owners')->middleware('auth:admin')->group(function () {
     Route::get('index', [OwnersController::class, 'expiredOwnerIndex'])->name('expired-owners.index');
