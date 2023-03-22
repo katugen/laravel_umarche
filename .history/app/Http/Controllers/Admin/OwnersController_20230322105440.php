@@ -38,7 +38,7 @@ class OwnersController extends Controller
         // dd($e_all, $q_get, $q_first, $c_test);
 
 
-        $owners = Owner::select('id', 'name', 'email', 'created_at')->paginate(3);
+        $owners = Owner::select('id', 'name', 'email', 'created_at')->pagenete();
         return view(
             'admin.owners.index',
             compact('owners')
