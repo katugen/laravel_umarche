@@ -84,7 +84,7 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('owner.shops.index')" :active="request()->routeIs('owner.shops.index')">
-                店舗情報
+                {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
 
