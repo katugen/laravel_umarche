@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Owner; //Eloquent
-use App\Models\Shop; //Eloquent
+use App\Model; //Eloquent
 use Illuminate\Support\Facades\DB; //クエリビルダ
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
@@ -81,13 +81,16 @@ class OwnersController extends Controller
                     'name' => '店名を入力してください',
                     'information' => '',
                     'filename' => '',
-                    'is_selling' => true,
+                    'is_selling' => true
                 ]);
             }, 2);
         } catch (Throwable $e) {
             Log::error($e);
             throw $e;
         }
+
+
+
 
         return redirect()
             ->route('admin.owners.index')

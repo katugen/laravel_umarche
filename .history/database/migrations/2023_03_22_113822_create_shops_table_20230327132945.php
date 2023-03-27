@@ -14,9 +14,8 @@ return new class extends Migration
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
             $table->foreignId('owner_id')
-                ->constrained()
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            ->constrained()
+            ->onUpdate('casc')
             $table->string('name');
             $table->text('information');
             $table->string('filename');

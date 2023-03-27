@@ -43,48 +43,48 @@
                                         </div>
                                         <div class="p-2 w-1/2 mx-auto">
                                             <div class="relative">
-                                                <label for="shop" class="leading-7 text-sm text-gray-600">店名</label>
+                                                <label for="email"
+                                                    class="leading-7 text-sm text-gray-600">メールアドレス</label>
                                                 <div
-                                                    class="w-full bg-gray-100 bg-opacity-50 rounded  border-gray-300  focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                                    {{ $owner->shop->name }}
+                                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                                                 </div>
-                                                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+
                                             </div>
-                                        </div>
-                                        <div class="p-2 w-1/2 mx-auto">
-                                            <div class="relative">
-                                                <label for="password"
-                                                    class="leading-7 text-sm text-gray-600">パスワード</label>
-                                                <input type="password" id="password" name="password" required
-                                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                                <x-input-error :messages="$errors->get('password')" class="mt-2" />
-                                            </div>
-                                        </div>
-                                        <div class="p-2 w-1/2 mx-auto">
-                                            <div class="relative">
-                                                <label for="password_confirmation"
-                                                    class="leading-7 text-sm text-gray-600">パスワード確認</label>
-                                                <input type="password" id="password_confirmation"
-                                                    name="password_confirmation" required
-                                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-                                            </div>
+                                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                         </div>
                                     </div>
-                                    <div class="p-2 w-full mt-4 flex justify-around">
-                                        <button type="button"
-                                            onclick="location.href='{{ route('admin.owners.index') }}'"
-                                            class=" bg-gray-200 border-0 py-2 px-8 focus:outline-none hover:bg-gray-400 rounded text-lg">戻る</button>
-                                        <button type="submit"
-                                            class=" text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">更新する</button>
+                                    <div class="p-2 w-1/2 mx-auto">
+                                        <div class="relative">
+                                            <label for="password" class="leading-7 text-sm text-gray-600">パスワード</label>
+                                            <input type="password" id="password" name="password" required
+                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                                        </div>
                                     </div>
-                                </form>
+                                    <div class="p-2 w-1/2 mx-auto">
+                                        <div class="relative">
+                                            <label for="password_confirmation"
+                                                class="leading-7 text-sm text-gray-600">パスワード確認</label>
+                                            <input type="password" id="password_confirmation"
+                                                name="password_confirmation" required
+                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                                        </div>
+                                    </div>
                             </div>
+                            <div class="p-2 w-full mt-4 flex justify-around">
+                                <button type="button" onclick="location.href='{{ route('admin.owners.index') }}'"
+                                    class=" bg-gray-200 border-0 py-2 px-8 focus:outline-none hover:bg-gray-400 rounded text-lg">戻る</button>
+                                <button type="submit"
+                                    class=" text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">更新する</button>
+                            </div>
+                            </form>
                         </div>
                 </div>
-                </section>
             </div>
+            </section>
         </div>
+    </div>
     </div>
     </div>
 </x-app-layout>

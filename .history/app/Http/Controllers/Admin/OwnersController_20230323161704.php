@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Owner; //Eloquent
-use App\Models\Shop; //Eloquent
 use Illuminate\Support\Facades\DB; //クエリビルダ
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
@@ -69,7 +68,7 @@ class OwnersController extends Controller
 
 
         try {
-            DB::transaction(function () use ($request) {
+            DB::transaction(function()use($request){
                 $owner = Owner::create([
                     'name' => $request->name,
                     'email' => $request->email,
@@ -77,17 +76,19 @@ class OwnersController extends Controller
                 ]);
 
                 Shop::create([
-                    'owner_id' => $owner->id,
+                    'owner_id'=>$owner->id,
                     'name' => '店名を入力してください',
-                    'information' => '',
-                    'filename' => '',
-                    'is_selling' => true,
+                    'in'
+
                 ]);
-            }, 2);
+            })
         } catch (Throwable $e) {
             Log::error($e);
             throw $e;
         }
+
+
+
 
         return redirect()
             ->route('admin.owners.index')

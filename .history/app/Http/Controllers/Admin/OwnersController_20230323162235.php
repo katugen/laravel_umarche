@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Owner; //Eloquent
-use App\Models\Shop; //Eloquent
 use Illuminate\Support\Facades\DB; //クエリビルダ
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
@@ -88,6 +87,9 @@ class OwnersController extends Controller
             Log::error($e);
             throw $e;
         }
+
+
+
 
         return redirect()
             ->route('admin.owners.index')
