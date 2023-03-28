@@ -35,6 +35,7 @@ class ShopController extends Controller
     public function index()
     {
 
+        phpinfo();
         // $ownerId = Auth::id();
         $shops = Shop::where('owner_id', Auth::id())->get();
 
@@ -60,7 +61,7 @@ class ShopController extends Controller
             $extension = $imageFile->extension();
             $fileNameToStore = $fileName . '.' . $extension;
             $resizedImage = InterventionImage::make($imageFile)->resize(1920, 1080)->encode();
-            // dd($imageFile, $resizedImage);
+            dd($imageFile,$resizedImage);
             Storage::put('public/shops/' . $fileNameToStore, $resizedImage);
         }
 
