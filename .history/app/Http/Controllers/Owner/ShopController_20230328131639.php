@@ -58,7 +58,9 @@ class ShopController extends Controller
     {
         $imageFile = $request->image; //一時保存
         if (!is_null($imageFile) && $imageFile->isValid()) {
-            $fileNameToStore =  ImageService::upload($imageFile, 'shops');
+            // Storage::putFile('public/shops', $imageFile); リサイズなし
+            //
+            
         }
 
         return redirect()->route('owner.shops.index');
