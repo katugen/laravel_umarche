@@ -23,7 +23,7 @@ class ImageController extends Controller
             if (!is_null($id)) {
                 $imagesOwnerId = Image::findOrFail($id)->owner->id;
                 $imageId = (int)$imagesOwnerId;
-                if ($imageId !== Auth::id()) {
+                if ($shopId !== Auth::id()) {
                     abort(404);
                 }
             }
@@ -32,14 +32,7 @@ class ImageController extends Controller
     }
     public function index()
     {
-        $images = Image::where('owner_id', Auth::id())
-            ->orderBy('updated_at', 'desc')
-            ->paginate(20);
-
-        return view(
-            'owner.images.index',
-            compact('images')
-        );
+        //
     }
 
     /**

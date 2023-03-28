@@ -23,6 +23,7 @@
                     <x-nav-link :href="route('owner.images.index')" :active="request()->routeIs('owner.images.index')">
                         画像管理
                     </x-nav-link>
+                    
                 </div>
             </div>
 

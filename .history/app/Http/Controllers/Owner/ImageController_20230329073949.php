@@ -34,11 +34,11 @@ class ImageController extends Controller
     {
         $images = Image::where('owner_id', Auth::id())
             ->orderBy('updated_at', 'desc')
-            ->paginate(20);
+            ->get();
 
         return view(
-            'owner.images.index',
-            compact('images')
+            'owner.shops.index',
+            compact('shops')
         );
     }
 

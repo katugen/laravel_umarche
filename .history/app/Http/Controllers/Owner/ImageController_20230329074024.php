@@ -38,7 +38,7 @@ class ImageController extends Controller
 
         return view(
             'owner.images.index',
-            compact('images')
+            compact('shops')
         );
     }
 

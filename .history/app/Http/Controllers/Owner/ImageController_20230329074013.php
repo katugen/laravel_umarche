@@ -37,8 +37,8 @@ class ImageController extends Controller
             ->paginate(20);
 
         return view(
-            'owner.images.index',
-            compact('images')
+            'owner.shops.index',
+            compact('shops')
         );
     }
 

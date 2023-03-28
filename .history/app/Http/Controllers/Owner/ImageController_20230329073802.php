@@ -32,14 +32,7 @@ class ImageController extends Controller
     }
     public function index()
     {
-        $images = Image::where('owner_id', Auth::id())
-            ->orderBy('updated_at', 'desc')
-            ->paginate(20);
-
-        return view(
-            'owner.images.index',
-            compact('images')
-        );
+        //
     }
 
     /**
