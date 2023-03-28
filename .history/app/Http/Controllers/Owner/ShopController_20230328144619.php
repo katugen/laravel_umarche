@@ -59,7 +59,7 @@ class ShopController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:50',
-            'information' => 'required|string|max:1000',
+            'information' => 'required', 'tring', 'max:1000',
             'is_selling' => 'required',
         ]);
 
@@ -78,8 +78,7 @@ class ShopController extends Controller
         }
         $shop->save();
 
-        return redirect()
-            ->route('owner.shops.index')
+        return redirect()->route('owner.shops.index')
             ->with([
                 'message' => '店舗情報を更新しました。',
                 'status' => 'info'

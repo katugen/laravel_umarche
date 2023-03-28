@@ -58,8 +58,8 @@ class ShopController extends Controller
     {
 
         $request->validate([
-            'name' => 'required|string|max:50',
-            'information' => 'required|string|max:1000',
+            'name' => 'required', 'string', 'max:50',
+            'email' => 'required', 'string', 'max:1000',
             'is_selling' => 'required',
         ]);
 
@@ -71,18 +71,10 @@ class ShopController extends Controller
 
         $shop = Shop::findOrFail($id);
         $shop->name = $request->name;
-        $shop->information = $request->information;
-        $shop->is_selling = $request->is_selling;
-        if (!is_null($imageFile) && $imageFile->isValid()) {
-            $shop->filename = $fileNameToStore;
-        }
+        $shop->information = $request->infomation;
+        $shop->password = Hash::make($request->password);
         $shop->save();
 
-        return redirect()
-            ->route('owner.shops.index')
-            ->with([
-                'message' => '店舗情報を更新しました。',
-                'status' => 'info'
-            ]);
+        return redirect()->route('owner.shops.index');
     }
 }

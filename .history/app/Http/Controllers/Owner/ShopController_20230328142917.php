@@ -58,9 +58,9 @@ class ShopController extends Controller
     {
 
         $request->validate([
-            'name' => 'required|string|max:50',
-            'information' => 'required|string|max:1000',
-            'is_selling' => 'required',
+            'name' => ['required', 'string', 'max:5'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . owner::class],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
 
@@ -69,20 +69,6 @@ class ShopController extends Controller
             $fileNameToStore =  ImageService::upload($imageFile, 'shops');
         }
 
-        $shop = Shop::findOrFail($id);
-        $shop->name = $request->name;
-        $shop->information = $request->information;
-        $shop->is_selling = $request->is_selling;
-        if (!is_null($imageFile) && $imageFile->isValid()) {
-            $shop->filename = $fileNameToStore;
-        }
-        $shop->save();
-
-        return redirect()
-            ->route('owner.shops.index')
-            ->with([
-                'message' => '店舗情報を更新しました。',
-                'status' => 'info'
-            ]);
+        return redirect()->route('owner.shops.index');
     }
 }
