@@ -10,7 +10,7 @@ use App\Models\Shop;
 use Illuminate\Support\Facades\Storage;
 use InterventionImage;
 use App\Http\Requests\UploadImageRequest;
-
+use App\Http\Controllers\Owner\rand
 
 class ShopController extends Controller
 {

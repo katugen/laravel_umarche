@@ -10,7 +10,8 @@ use App\Models\Shop;
 use Illuminate\Support\Facades\Storage;
 use InterventionImage;
 use App\Http\Requests\UploadImageRequest;
-
+use Illuminate\Support\Str;
+を宣言する必要があります。
 
 class ShopController extends Controller
 {

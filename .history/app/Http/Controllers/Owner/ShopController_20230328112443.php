@@ -10,6 +10,7 @@ use App\Models\Shop;
 use Illuminate\Support\Facades\Storage;
 use InterventionImage;
 use App\Http\Requests\UploadImageRequest;
+use Illuminate\Support\Str;
 
 
 class ShopController extends Controller

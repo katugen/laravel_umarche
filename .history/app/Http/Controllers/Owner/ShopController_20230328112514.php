@@ -10,6 +10,7 @@ use App\Models\Shop;
 use Illuminate\Support\Facades\Storage;
 use InterventionImage;
 use App\Http\Requests\UploadImageRequest;
+use Illuminate\Support\Str;
 
 
 class ShopController extends Controller
@@ -58,10 +59,10 @@ class ShopController extends Controller
         $imageFile = $request->image; //一時保存
         if (!is_null($imageFile) && $imageFile->isValid()) {
             // Storage::putFile('public/shops', $imageFile); リサイズなし
-            $fileName = uniqid(rand() . '_');
+            $fileName = uniqid(Str::rand() . '_');
             $extension = $imageFile->extension();
             $fileNameToStore = $fileName . '.' . $extension;
-            $resizedImage = InterventionImage::make($imageFile)->resize(1920, 1080)->encode();
+            $resizedImage = Image::make($imageFile)->resize(1920, 1080)->encode();
             // dd($imageFile, $resizedImage);
             Storage::put('public/shops/' . $fileNameToStore, $resizedImage);
         }

@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Storage;
 use InterventionImage;
 use App\Http\Requests\UploadImageRequest;
 
-
 class ShopController extends Controller
 {
     public function __construct()

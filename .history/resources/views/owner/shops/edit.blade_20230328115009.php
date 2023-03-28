@@ -10,8 +10,8 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <x-input-error :messages="$errors->get('image')" class="mt-2" />
-                    <x-input-error :messages="$errors->get('mines')" class="mt-2" />
-                    <x-input-error :messages="$errors->get('max')" class="mt-2" />
+                    <x-input-error :messages="$errors->get('min')" class="mt-2" />
+                    <x-input-error :messages="$errors->get('image')" class="mt-2" />
                     <form method='post' action="{{ route('owner.shops.update', ['shop' => $shop->id]) }}"
                         enctype="multipart/form-data">
                         @csrf

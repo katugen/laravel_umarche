@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Storage;
 use InterventionImage;
 use App\Http\Requests\UploadImageRequest;
 
-
 class ShopController extends Controller
 {
     public function __construct()
@@ -53,7 +52,7 @@ class ShopController extends Controller
         return view('owner.shops.edit', compact('shop'));
     }
 
-    public function update(UploadImageRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $imageFile = $request->image; //一時保存
         if (!is_null($imageFile) && $imageFile->isValid()) {
