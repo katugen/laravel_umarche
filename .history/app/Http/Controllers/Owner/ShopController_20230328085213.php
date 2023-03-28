@@ -49,13 +49,11 @@ class ShopController extends Controller
         return view('owner.shops.edit', compact('shop'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, string $id)
     {
         $imageFile = $request->image; //一時保存
         if (!is_null($imageFile) && $imageFile->isValid()) {
             Storage::putFile('public/shops', $imageFile);
         }
-
-        return redirect()->route('owner.shops.index');
     }
 }

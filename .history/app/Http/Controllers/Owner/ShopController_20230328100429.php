@@ -56,6 +56,6 @@ class ShopController extends Controller
             Storage::putFile('public/shops', $imageFile);
         }
 
-        return redirect()->route('owner.shops.index');
+        return redirect()
     }
 }

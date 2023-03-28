@@ -55,7 +55,5 @@ class ShopController extends Controller
         if (!is_null($imageFile) && $imageFile->isValid()) {
             Storage::putFile('public/shops', $imageFile);
         }
-
-        return redirect()->route('owner.shops.index');
     }
 }
