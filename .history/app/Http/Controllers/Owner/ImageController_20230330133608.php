@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Image;
 use App\Http\Requests\UploadImageRequest;
 use App\Services\ImageService;
-use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -109,19 +108,12 @@ class ImageController extends Controller
      */
     public function destroy(string $id)
     {
-        $image =  Image::findOrFail($id);
-        $filePath = 'public/products/' . $image->filename;
-
-        if (Storage::exists($filePath)) {
-            Storage::delete($filePath);
-        }
-
-        IMage::findOrFail($id)->delete();
+        IMage::findOrFail($id)->delete(); //ソフトデリート
 
         return redirect()
-            ->route('owner.images.index')
+            ->route('admin.owners.index')
             ->with([
-                'message' => '画像を削除しました。',
+                'message' => 'オーナー情報を削除しました。',
                 'status' => 'alert'
             ]);
     }

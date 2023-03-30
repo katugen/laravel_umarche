@@ -110,11 +110,9 @@ class ImageController extends Controller
     public function destroy(string $id)
     {
         $image =  Image::findOrFail($id);
-        $filePath = 'public/products/' . $image->filename;
+        $filePath = 'public/products/'.$image->filename;
 
-        if (Storage::exists($filePath)) {
-            Storage::delete($filePath);
-        }
+        if()
 
         IMage::findOrFail($id)->delete();
 

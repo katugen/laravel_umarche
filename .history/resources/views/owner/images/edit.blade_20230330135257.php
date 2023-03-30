@@ -51,6 +51,7 @@
                 </div>
             </div>
         </div>
+        src="http://localhost:8011/storage/products/721538109_642510b2ca080.jpg"
     </div>
     <script>
         function deletePost(e) {

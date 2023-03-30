@@ -113,7 +113,7 @@ class ImageController extends Controller
         $filePath = 'public/products/' . $image->filename;
 
         if (Storage::exists($filePath)) {
-            Storage::delete($filePath);
+            Storage::delete(['file', 'otherFile']);
         }
 
         IMage::findOrFail($id)->delete();
