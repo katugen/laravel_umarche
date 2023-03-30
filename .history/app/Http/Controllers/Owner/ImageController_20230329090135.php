@@ -48,15 +48,15 @@ class ImageController extends Controller
      */
     public function create()
     {
-        return view('owner.images.create');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(UploadImageRequest $request)
+    public function store(Request $request)
     {
-        dd($request);
+        //
     }
 
     /**

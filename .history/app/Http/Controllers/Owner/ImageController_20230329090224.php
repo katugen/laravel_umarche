@@ -48,7 +48,7 @@ class ImageController extends Controller
      */
     public function create()
     {
-        return view('owner.images.create');
+        return view('owner.images.create')
     }
 
     /**
@@ -56,7 +56,7 @@ class ImageController extends Controller
      */
     public function store(UploadImageRequest $request)
     {
-        dd($request);
+        //
     }
 
     /**
