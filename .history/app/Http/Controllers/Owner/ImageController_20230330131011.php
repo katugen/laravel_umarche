@@ -79,8 +79,8 @@ class ImageController extends Controller
      */
     public function edit(string $id)
     {
-        $image = Image::findOrFail($id);
-        return view('owner.images.edit', compact('image'));
+        $shop = Shop::findOrFail($id);
+        return view('owner.shops.edit', compact('shop'));
     }
 
     /**
@@ -88,19 +88,7 @@ class ImageController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request->validate([
-            'title' => 'string|max:50',
-        ]);
-        $image = Image::findOrFail($id);
-        $image->title = $request->title;
-        $image->save();
-
-        return redirect()
-            ->route('owner.images.index')
-            ->with([
-                'message' => '画像情報を更新しました。',
-                'status' => 'info'
-            ]);
+        //
     }
 
     /**

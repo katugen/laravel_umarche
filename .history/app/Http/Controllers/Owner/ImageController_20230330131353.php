@@ -91,7 +91,7 @@ class ImageController extends Controller
         $request->validate([
             'title' => 'string|max:50',
         ]);
-        $image = Image::findOrFail($id);
+        $image= Image::findOrFail($id);
         $image->title = $request->title;
         $image->save();
 
@@ -101,6 +101,7 @@ class ImageController extends Controller
                 'message' => '画像情報を更新しました。',
                 'status' => 'info'
             ]);
+
     }
 
     /**

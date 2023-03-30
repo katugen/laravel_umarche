@@ -90,17 +90,11 @@ class ImageController extends Controller
     {
         $request->validate([
             'title' => 'string|max:50',
+            'information' => 'required|string|max:1000',
+            'is_selling' => 'required',
         ]);
-        $image = Image::findOrFail($id);
-        $image->title = $request->title;
-        $image->save();
 
-        return redirect()
-            ->route('owner.images.index')
-            ->with([
-                'message' => '画像情報を更新しました。',
-                'status' => 'info'
-            ]);
+
     }
 
     /**
