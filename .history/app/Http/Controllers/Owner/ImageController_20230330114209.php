@@ -57,20 +57,8 @@ class ImageController extends Controller
      */
     public function store(UploadImageRequest $request)
     {
-        $imageFiles = $request->file('files');
-        if (!is_null($imageFiles)) {
-            foreach ($imageFiles as $imageFile) {
-                $fileNameToStore =  ImageService::upload($imageFile, 'products');
-                Image::create([
-                    'owner_id' => Auth::id(),
-                    'filename' => $fileNameToStore
-                ]);
-            }
-        }
-
-        return redirect()
-            ->route('owner.images.index')
-            ->with(['message' => '画像登録を実施しました。', 'status' => 'info']);
+       $imageFiles = $request->file('files');
+       if(!is_null(&))
     }
 
     /**

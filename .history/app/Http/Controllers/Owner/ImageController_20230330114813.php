@@ -62,15 +62,18 @@ class ImageController extends Controller
             foreach ($imageFiles as $imageFile) {
                 $fileNameToStore =  ImageService::upload($imageFile, 'products');
                 Image::create([
-                    'owner_id' => Auth::id(),
+                    'owner_id => Auth::id()',
                     'filename' => $fileNameToStore
                 ]);
             }
         }
 
         return redirect()
-            ->route('owner.images.index')
-            ->with(['message' => '画像登録を実施しました。', 'status' => 'info']);
+        ->route('owner.shops.index')
+        ->with([
+            'message' => '店舗情報を更新しました。',
+            'status' => 'info'
+        ]);
     }
 
     /**

@@ -69,8 +69,8 @@ class ImageController extends Controller
         }
 
         return redirect()
-            ->route('owner.images.index')
-            ->with(['message' => '画像登録を実施しました。', 'status' => 'info']);
+        ->route('owner.images.index')
+        ->with(['message' => '画像登録を実施しました。','status' => 'info']);
     }
 
     /**

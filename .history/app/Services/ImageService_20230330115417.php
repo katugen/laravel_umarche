@@ -9,7 +9,7 @@ class ImageService
 {
     public static function upload($imageFile, $folderName)
     {
-        // dd($imageFile['image']);
+        dd($imageile);
         if (is_array($imageFile)) {
             $file = $imageFile['image'];
         } else {
