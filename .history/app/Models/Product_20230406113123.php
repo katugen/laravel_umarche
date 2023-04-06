@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Shop;
 use App\Models\SecondaryCategory;
 use App\Models\Image;
-use App\Models\Stock;
 
 class Product extends Model
 {
@@ -29,6 +28,6 @@ class Product extends Model
 
     public function stock()
     {
-        return $this->hasMany(Stock::class);
+        return $this->hasMany(Product::class);
     }
 }

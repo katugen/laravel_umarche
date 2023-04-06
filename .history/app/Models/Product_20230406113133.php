@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Shop;
 use App\Models\SecondaryCategory;
 use App\Models\Image;
-use App\Models\Stock;
+use App\Models\Image;
 
 class Product extends Model
 {

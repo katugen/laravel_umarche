@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             ImageSeeder::class,
             CategorySeeder::class,
             ProductSeeder::class,
-            StockSeeder::class,
+            ProductSeeder::class,
 
         ]);
         // \App\Models\User::factory(10)->create();

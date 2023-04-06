@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Shop;
 use App\Models\SecondaryCategory;
 use App\Models\Image;
-use App\Models\Stock;
 
 class Product extends Model
 {
@@ -27,8 +26,8 @@ class Product extends Model
         return $this->belongsTo(Image::class, 'image1', 'id');
     }
 
-    public function stock()
+    public function product()
     {
-        return $this->hasMany(Stock::class);
+        return $this->hasMany(Product::class);
     }
 }
