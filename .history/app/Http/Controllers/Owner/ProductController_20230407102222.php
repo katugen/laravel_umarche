@@ -65,11 +65,14 @@ class ProductController extends Controller
 
         $images = Image::where('owner_id', Auth::id())
             ->select('id', 'title', 'filename')
-            ->orderBy('updated_at', 'desc')
+            ->orderBy('updated_at' ,'desc')
             ->get();
 
         $categories = PrimaryCategory::with('secondary')
             ->get();
+
+            $images = Image::where(‘owner_id’, Auth::id())->select(‘id’, ‘title’,
+‘filename’)->orderBy(‘updated_at’, ‘desc’)->get();
 
         return view(
             'owner.products.create',
