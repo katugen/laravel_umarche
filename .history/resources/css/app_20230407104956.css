@@ -1,4 +1,4 @@
-@import 'micromodal';
+@tailwind 'micromodal';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
