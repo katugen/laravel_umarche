@@ -3,13 +3,9 @@
 namespace App\Http\Controllers\Owner;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
-use Throwable;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
-use App\Models\Stock;
 use App\Models\Image;
 use App\Models\Shop;
 use App\Models\Owner;
@@ -101,42 +97,6 @@ class ProductController extends Controller
             'image4' => 'nullable|exists:images,id',
             'is_selling' => 'required'
         ]);
-
-        try {
-            DB::transaction(function () use ($request) {
-                $product = Product::create([
-                    'name' => $request->name,
-                    'information' => $request->information,
-                    'price' => $request->price,
-                    'sort_order' => $request->sort_order,
-                    'shop_id' => $request->shop_id,
-                    'secondary_category_id' => $request->category,
-                    'image1' => $request->image1,
-                    'image2' => $request->image2,
-                    'image3' => $request->image3,
-                    'image4' => $request->image4,
-                    'is_selling' => $request->is_selling
-                ]);
-
-                Stock::create([
-                    'product_id' => $product->id,
-                    'type' => 1,
-                    'quantity' => $request->quantity,
-                ]);
-            }, 2);
-        } catch (Throwable $e) {
-            Log::error($e);
-            throw $e;
-        }
-
-        return redirect()
-            ->route('owner.products.index')
-            ->with(
-                [
-                    'message' => '商品登録しました。',
-                    'status' => 'info'
-                ]
-            );
     }
 
     /**

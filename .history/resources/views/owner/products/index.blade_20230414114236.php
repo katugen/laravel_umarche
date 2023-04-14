@@ -21,8 +21,7 @@
                                     {{-- <a href="{{ route('owner.products.edit', ['procuct' => $product->id]) }}"> --}}
                                     <div class="border rounded-md p-2 md:p-4">
                                         <div class="mb-4">
-                                            <x-thumbnail filename="{{ $product->imageFirst->filename ?? '' }}"
-                                                type="products" />
+                                            <x-thumbnail :filename="{{  $product->imageFirst->filename ??}}" type="products" />
                                             {{-- <div class="text-gray-700"> {{ $product->name }} </div> --}}
                                         </div>
                                     </div>

@@ -14,17 +14,11 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
-        'shop_id',
+        'owner_id',
         'name',
         'information',
-        'price',
+        'filename',
         'is_selling',
-        'sort_order',
-        'secondary_category_id',
-        'image1',
-        'image2',
-        'image3',
-        'image4',
     ];
 
     public function shop()

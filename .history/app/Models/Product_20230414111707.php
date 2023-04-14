@@ -22,9 +22,9 @@ class Product extends Model
         'sort_order',
         'secondary_category_id',
         'image1',
-        'image2',
-        'image3',
-        'image4',
+        'image1',
+        'image1',
+        'image1',
     ];
 
     public function shop()

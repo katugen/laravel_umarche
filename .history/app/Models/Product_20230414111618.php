@@ -19,12 +19,8 @@ class Product extends Model
         'information',
         'price',
         'is_selling',
-        'sort_order',
-        'secondary_category_id',
-        'image1',
-        'image2',
-        'image3',
-        'image4',
+        'is_selling',
+        'is_selling',
     ];
 
     public function shop()
